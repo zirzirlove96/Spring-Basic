@@ -17,6 +17,7 @@ import javax.swing.*;
 @Configuration
 public class SpringConfig {
 
+    /*
     private DataSource dataSource;
     private EntityManager em;
 
@@ -44,6 +45,19 @@ public class SpringConfig {
         //return new JdbcTemaplateMemberRepository(dataSource);
         return new JpaMemberRepository(em);
 
+    }*/
+
+    //spring Data Jpa에 의해 memberRepository가 주입되어 사용할 수 있다.
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository){
+        this.memberRepository=memberRepository;
+    }
+
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
     }
 
 

@@ -33,6 +33,8 @@ public class JpaMemberRepository implements MemberRepository{
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();
     }
+
+
     public Optional<Member> findByName(String name) {
 
         List<Member> result = em.createQuery("select m from Member m where m.name = :name", Member.class)
@@ -41,8 +43,4 @@ public class JpaMemberRepository implements MemberRepository{
         return result.stream().findAny();
     }
 
-    @Override
-    public void clearStore() {
-
-    }
 }

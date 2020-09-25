@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MemoryMemberRepositoryTest {
 
-    MemberRepository repository = new MemoryMemberRepository();
+    MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @Test //repository의 save를 테스트해 본다.
     public void save() {

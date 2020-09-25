@@ -56,10 +56,6 @@ public class JdbcTemaplateMemberRepository implements MemberRepository{
         return jdbcTemplate.query("select * from member", memberRowMapper());
     }
 
-    @Override
-    public void clearStore() {
-
-    }
 
     //JdbcTemplate을 사용할 때는 RowMapper를 사용해 줘야 한다.
     private RowMapper<Member> memberRowMapper() {

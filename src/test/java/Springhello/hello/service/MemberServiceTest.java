@@ -14,7 +14,7 @@ class MemberServiceTest {
 
     //memberService에서 MemberService를 이용했기 때문에
     //인스턴스를 생성하지 않는다.
-    private MemberRepository memberRepository;//clearStore를 하기 위해
+    private MemoryMemberRepository memberRepository;//clearStore를 하기 위해
     private MemberService memberService;
 
 
