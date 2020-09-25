@@ -5,6 +5,7 @@ import Springhello.hello.repository.MemberRepository;
 import Springhello.hello.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.swing.text.html.Option;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 //실질적인 비지니스 로직이다.
 //@Service //순수한 자바 클래스를 @Service를 이용하여 container가 bean으로 등록하여 관리하게끔 한다.
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
