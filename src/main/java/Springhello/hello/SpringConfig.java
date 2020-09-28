@@ -1,5 +1,6 @@
 package Springhello.hello;
 
+import Springhello.hello.aop.TimeTraceAop;
 import Springhello.hello.repository.*;
 import Springhello.hello.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +61,11 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+    //AOP 클래스를 빈으로 등록
+    /*
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 
 }
